@@ -57,6 +57,19 @@ nav{
   cursor: pointer;
 }
 
+.my-switch {
+  padding-top: 6px;
+}
+
+.my-switch .form-switch {
+  margin: 3px 0px 0 15px;
+}
+
+.form-text {
+  font-family: "Nunito Sans";
+  font-weight: 400;
+  font-size: large;
+}
 
 /***** styling for index page *****/
 
