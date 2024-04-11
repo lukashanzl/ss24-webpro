@@ -7,6 +7,9 @@
     $enteredUsername = htmlspecialchars($_POST["floatingUsername"]);
     $enteredPassword = htmlspecialchars($_POST["floatingPassword"]);
 
+    $data = htmlspecialchars($_POST["data"]);
+    $stringData = json_encode($data);
+
     $connection = new mysqli($dbHost, $dbUsername, $dbPassword, $dbName);
 
     $select = "SELECT * from users WHERE username=?";

@@ -4,13 +4,13 @@ require_once("./dbaccess.php");
 
 $connection = new mysqli($dbHost, $dbUsername, $dbPassword, $dbName);
 
-/*
+
 $username = "admin";
 $password = "admin";
 $firstname = "Admin";
 $lastname = "Shirtshop";
 $email = "admin@test.com";
-*/
+
 
 $insert = "INSERT INTO users (username, firstname, lastname, email, password) VALUES (?, ?, ?, ?, ?)";
 

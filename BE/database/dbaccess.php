@@ -1,8 +1,8 @@
 <?php
 
-$dbUsername = "admin";
+$dbUsername = "shirtadmin";
 $dbPassword = "admin";
 $dbHost = "localhost";
-$dbName = "shirtshop_test";
+$dbName = "shirtshopdev";
 
 ?>

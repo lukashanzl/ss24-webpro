@@ -20,7 +20,7 @@ nav{
   box-sizing: border-box;
 }
 
-.form-container form {
+.form-container .form {
   display: flex;
   flex-direction: column;
   width: 60%;
@@ -36,22 +36,22 @@ nav{
   font-weight: 400;
 }
 
-.form-container form input,
-.form-container form textarea,
-.form-container form button {
+.form-container .form input,
+.form-container .form textarea,
+.form-container .form button {
   margin-bottom: 10px;
   padding: 10px;
   border-radius: 5px;
   border: 1px solid #ccc;
 }
 
-.form-container form input:focus,
-.form-container form textarea:focus,
-.form-container form button:focus {
+.form-container .form input:focus,
+.form-container .form textarea:focus,
+.form-container .form button:focus {
   outline-color: #007bff;
 }
 
-.form-container form button {
+.form-container .form button {
   background-color: #007bff;
   color: #fff;
   cursor: pointer;
