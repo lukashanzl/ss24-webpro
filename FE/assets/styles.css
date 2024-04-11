@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+
+body{
+  background-image: url("./images/background.jpg");
+}
+
+nav{
+  font-size: large;
+}
+
+/***** styling for login form *****/
+
+.form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  border-radius: 10px;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.form-container .form {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  max-width: 400px;
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 20px;
+  box-sizing: border-box;
+  border-radius: 10px;
+}
+
+.form-container h5 {
+  font-family: "Nunito Sans";
+  font-weight: 400;
+}
+
+.form-container .form input,
+.form-container .form textarea,
+.form-container .form button {
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.form-container .form input:focus,
+.form-container .form textarea:focus,
+.form-container .form button:focus {
+  outline-color: #007bff;
+}
+
+.form-container .form button {
+  background-color: #007bff;
+  color: #fff;
+  cursor: pointer;
+}
+
+.my-switch {
+  padding-top: 6px;
+}
+
+.my-switch .form-switch {
+  margin: 3px 0px 0 15px;
+}
+
+.form-text {
+  font-family: "Nunito Sans";
+  font-weight: 400;
+  font-size: large;
+}
+
+/***** styling for index page *****/
+
+.index-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  border-radius: 10px;
+  padding: 20px;
+  box-sizing: border-box;
+  flex-direction: column;
+}
+
+.index-container div {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 20px;
+  box-sizing: border-box;
+  border-radius: 10px;
+  margin: 10px;
+}
+
+.index-container h1 h2 h3 h4 h5 h6 {
+  font-family: "Nunito Sans";
+  font-weight: 400;
+}
