@@ -3,7 +3,7 @@ session_start();
 include_once("./includes/header.php");
 include_once("../../BE/classes/user.php");
 ?>
-<div class="form-container">
+<div class="form-container" id="form-container">
 
   <div class="form">
 
@@ -44,6 +44,12 @@ include_once("../../BE/classes/user.php");
     <button type="submit" onclick="loginSignUpUser()">Login</button>
   </div>
 </div>
+<script>
+  $(document).ready(function(){
+    let param = window.location.search.substr(1);
+    console.log(param);
+  });
+</script>
 <?php
 include_once("./includes/footer.php");
 ?>

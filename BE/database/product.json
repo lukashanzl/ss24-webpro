@@ -5,32 +5,25 @@
     "currency_code": "USD",
     "quantity": 2,
     "product_id": "abc1234567890",
-    "properties": [
-      {
-        "name": "Size",
-        "value": "Medium"
-      },
-      {
-        "name": "Color",
-        "value": "Blue"
-      }
-    ]
+    "size": "Medium",
+    "color": "White"
+  },
+  {
+    "name": "test-product-1",
+    "price": 15.99,
+    "currency_code": "USD",
+    "quantity": 2,
+    "product_id": "abcd1234567890",
+    "size": "Small",
+    "color": "White"
   },
   {
     "name": "test-product-2",
-    "price": 20.99,
+    "price": 15.99,
     "currency_code": "USD",
-    "quantity": 2,
-    "product_id": "abc1234567890",
-    "properties": [
-      {
-        "name": "Size",
-        "value": "Large"
-      },
-      {
-        "name": "Color",
-        "value": "Black"
-      }
-    ]
+    "quantity": 5,
+    "product_id": "abc666",
+    "size": "Medium",
+    "color": "White"
   }
 ]
