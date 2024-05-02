@@ -99,3 +99,32 @@ nav{
   font-family: "Nunito Sans";
   font-weight: 400;
 }
+
+/***** styling for index page *****/
+
+.user-data-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  border-radius: 10px;
+  padding: 20px;
+  box-sizing: border-box;
+  flex-direction: column;
+}
+
+.user-data-container div {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 20px;
+  box-sizing: border-box;
+  border-radius: 10px;
+  margin: 10px;
+}
+
+.user-data-container h1 h2 h3 h4 h5 h6 {
+  font-family: "Nunito Sans";
+  font-weight: 400;
+}
