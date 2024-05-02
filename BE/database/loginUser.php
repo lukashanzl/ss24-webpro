@@ -30,6 +30,7 @@
   if(password_verify($enteredPassword, $password)){
     $_SESSION['user'] = array('id' => $id, 'username'=>$username,'firstname'=>$firstname, 'lastname'=>$lastname);
     setcookie(session_name(), session_id()); //Start a user's session
+    
     $response["Result"] = "OK";
     $response["Message"] = "Login Successfull";
     $response["UserName"] = $username;

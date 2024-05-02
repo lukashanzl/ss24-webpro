@@ -2,7 +2,19 @@
 session_start();
 include_once("./includes/header.php");
 include_once("../../BE/classes/user.php");
+
+if(isset($_SESSION['user'])){
+  $js_session = $_SESSION['user'];
+} else {
+  $js_session = "notset";
+}
+
 ?>
+<script>
+    var jsSession = '<?php echo $js_session; ?>';
+    console.log(jsSession);
+</script>
+
 <div class="form-container" id="form-container">
 
   <div class="form">
