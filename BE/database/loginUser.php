@@ -28,6 +28,10 @@
   $stmt->fetch();
 
   if(password_verify($enteredPassword, $password)){
+    if($enteredUsername = "admin"){
+      $_SESSION['admin'] = array('id' => $id, 'username'=>$username,'firstname'=>$firstname, 'lastname'=>$lastname);
+      setcookie(session_name(), session_id()); //Start a user's session
+    }
     $_SESSION['user'] = array('id' => $id, 'username'=>$username,'firstname'=>$firstname, 'lastname'=>$lastname);
     setcookie(session_name(), session_id()); //Start a user's session
     

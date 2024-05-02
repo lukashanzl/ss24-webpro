@@ -6,7 +6,12 @@ include_once("../../BE/classes/user.php");
 if(isset($_SESSION['user'])){
   $js_session = $_SESSION['user'];
 } else {
-  $js_session = "notset";
+  $js_session = null;
+}
+if(isset($_SESSION['admin'])){
+  $js_session_admin = $_SESSION['admin'];
+} else {
+  $js_session_admin = null;
 }
 
 ?>

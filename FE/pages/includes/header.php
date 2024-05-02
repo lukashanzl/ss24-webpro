@@ -1,3 +1,18 @@
+<?php 
+
+if(isset($_SESSION['user'])){
+  $js_session = $_SESSION['user'];
+} else {
+  $js_session = null;
+}
+if(isset($_SESSION['admin'])){
+  $js_session_admin = $_SESSION['admin'];
+} else {
+  $js_session_admin = null;
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,6 +27,12 @@
 </head>
 
 <body>
+
+<script>
+    var jsSession = '<?php echo $js_session; ?>';
+    console.log(jsSession);
+</script>
+
   <nav class="navbar navbar-light navbar-expand-lg bg-faded justify-content-center transparent" id="navbar">
     <div class="container">
       <a class="navbar-brand d-flex w-50 me-auto" href="./index.php"><i class="bi bi-box2-heart"></i>&nbsp; Shirt-Shop</a>
@@ -24,22 +45,22 @@
             <a class="nav-link" href="./index.php">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">About Us</a>
+            <a class="nav-link" href="./aboutus.php">About Us</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Webshop</a>
+            <a class="nav-link" href="./products.php">Products</a>
           </li>
         </ul>
         <ul class="nav navbar-nav ms-auto w-100 justify-content-end">
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Dropdown
+            Account Management
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><a class="dropdown-item" href="./user/userdata.php">Personal Data</a></li>
+            <li><a class="dropdown-item" href="./user/paymentmethods.php">Payment Methods</a></li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
+            <li><a class="dropdown-item" href="./user/orders.php">Orders</a></li>
           </ul>
         </li>
           <li class="nav-item">
