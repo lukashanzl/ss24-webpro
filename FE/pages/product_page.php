@@ -19,6 +19,8 @@ document.head.appendChild(linkElement);
             <option value="all">Alle Kategorien</option>
             <option value="Staubsauger">Staubsauger</option>
             <option value="Accessoires">Accessoires</option>
+            <option value="Langarm">Langarm</option>
+            <option value="Kurzarm">Kurzarm</option>
         </select>
     </header>
 

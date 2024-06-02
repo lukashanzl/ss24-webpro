@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Erstellungszeit: 01. Jun 2024 um 23:09
+-- Erstellungszeit: 02. Jun 2024 um 08:22
 -- Server-Version: 10.4.28-MariaDB
 -- PHP-Version: 8.2.4
 
@@ -49,7 +49,13 @@ INSERT INTO `products` (`id`, `description`, `price`, `image`, `watt`, `marke`, 
 (4, 'Ein beutelloser Staubsauger mit innovativer Vortex-Technologie.', 399.99, 'miele_cx1.jpeg', 1600, 'Miele', 'Blizzard CX1', 'Staubsauger'),
 (5, 'Ein flexibler kabelloser Staubsauger mit dreifachem Filtersystem.', 499.99, 'miele_hx1.jpeg', 1700, 'Miele', 'Triflex HX1', 'Staubsauger'),
 (6, 'Ein hochwertiger Bürstenkopf für empfindliche Hartböden.', 79.99, 'miele_parquet.jpeg', NULL, 'Miele', 'Parquet Twister', 'Accessoires'),
-(7, 'Ein langlebiger Staubsaugerbeutel für Miele Staubsauger.', 19.99, 'miele_staubsack.jpeg', NULL, 'Miele', 'Staubsack', 'Accessoires');
+(7, 'Ein langlebiger Staubsaugerbeutel für Miele Staubsauger.', 19.99, 'miele_staubsack.jpeg', NULL, 'Miele', 'Staubsack', 'Accessoires'),
+(8, 'Ein stylisches kurzärmeliges Baumwollshirt.', 19.99, 'product3.jpeg', NULL, 'BlackLabel', 'Modell1', 'Kurzarm'),
+(9, 'Ein elegantes kurzärmeliges Poloshirt.', 29.99, 'product4.jpeg', NULL, 'BlackLabel', 'Modell2', 'Kurzarm'),
+(10, 'Ein sportliches kurzärmeliges Funktionsshirt.', 24.99, 'product5.jpeg', NULL, 'NotoriuusB', 'Modell3', 'Kurzarm'),
+(11, 'Ein bequemes kurzärmeliges Freizeithemd.', 34.99, 'product6.jpeg', NULL, 'NotoriuusB', 'Modell4', 'Kurzarm'),
+(12, 'Ein flippiges Design Lorem Ipsum.', 39.99, 'langarm_blau.jpeg', NULL, 'SmileyFace', 'Blue', 'Langarm'),
+(13, 'Ein warmes gemütliches Schirt aus 100% Baumwolle.', 49.99, 'langarm_gelb.jpeg', NULL, 'Sunfactory', 'Yellow', 'Langarm');
 
 -- --------------------------------------------------------
 
@@ -100,7 +106,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT für Tabelle `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT für Tabelle `users`
