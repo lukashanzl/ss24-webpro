@@ -47,6 +47,6 @@ document.head.appendChild(linkElement);
     </div>
 
 <script src="../script/script_products.js"></script>
-</body>
-
-</html>
+<?php
+include_once("./includes/footer.php");
+?>
