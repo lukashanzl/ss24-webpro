@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    let cart = [];
+    let cart = loadCartFromLocalStorage();
 
     // Fetch products
     fetchProducts();
@@ -17,13 +17,20 @@ $(document).ready(function() {
 
     // Event Listener für das Warenkorb-Symbol Icon
     $('#cart-icon').on('click', function() {
+        if (!window.location.href.endsWith('product_page.php')) {
+            // Redirect to 'product_page.php'
+            window.location.href = 'product_page.php';
+        }else{
         $('html, body').animate({
             scrollTop: $('#cart').offset().top
         }, 1000);
+    }
     });
-
-
-    
+    $('#scrollToTop').on('click', function() {
+        $('html, body').animate({
+            scrollTop: $('html,body').offset().top
+        }, 1000);
+    });
 
     function fetchProducts(query = '', category = 'all') {
         $.ajax({
@@ -71,9 +78,8 @@ $(document).ready(function() {
     }
 
     function addToCart(productId) {
-        // Find product by ID
         $.ajax({
-            url: '../../BE/classes/products.php?products=all',  // Sicherstellen, dass der Pfad korrekt ist
+            url: '../../BE/classes/products.php?products=all',
             method: 'GET',
             dataType: 'json',
             success: function(data) {
@@ -86,6 +92,7 @@ $(document).ready(function() {
                         product.quantity = 1;
                         cart.push(product);
                     }
+                    saveCartToLocalStorage();
                     renderCart();
                 }
             },
@@ -154,6 +161,7 @@ $(document).ready(function() {
             if (product.quantity <= 0) {
                 removeFromCart(productId);
             } else {
+                saveCartToLocalStorage();
                 renderCart();
             }
         }
@@ -161,6 +169,20 @@ $(document).ready(function() {
 
     function removeFromCart(productId) {
         cart = cart.filter(p => p.id != productId);
+        saveCartToLocalStorage();
         renderCart();
     }
+
+    function saveCartToLocalStorage() {
+        localStorage.setItem('cart', JSON.stringify(cart));
+    }
+
+    function loadCartFromLocalStorage() {
+        const savedCart = localStorage.getItem('cart');
+        return savedCart ? JSON.parse(savedCart) : [];
+    }
+
+    // Render the cart initially if there are items in localStorage
+    renderCart();
 });
+

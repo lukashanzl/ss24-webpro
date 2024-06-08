@@ -144,7 +144,7 @@ nav{
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
-/* Warenkorb-Symbol-Stil */
+/* WarenkorbStil */
 
 #cart {
   border: 1px solid #ddd;
@@ -171,29 +171,11 @@ nav{
   margin-left: 10px;
 }
 
-/* Warenkorb-Symbol-Stil */
-#cart-icon {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  background-color: #f8f9fa;
-  border: 1px solid #ddd;
-  padding: 10px;
-  border-radius: 50%;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  cursor: pointer;
-  z-index: 1000;
-  display: flex;
-  align-items: center;
-}
+  /* Warenkorb-Symbol-Stil */
+  
+  #cart-icon{
+    margin-top: 8px;
+  }
 
-#cart-icon svg {
-  margin-right: 5px;
-}
-
-#cart-icon span {
-  font-size: 1.2em;
-  font-weight: bold;
-}
 
 
