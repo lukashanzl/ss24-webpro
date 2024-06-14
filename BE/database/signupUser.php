@@ -19,20 +19,26 @@
   $enteredFirstname = htmlspecialchars($receivedData["firstName"]);
   $enteredLastname = htmlspecialchars($receivedData["lastName"]);
   $enteredEmail = htmlspecialchars($receivedData["email"]);
+  $enteredAddress = htmlspecialchars($receivedData["address"]);
+  $enteredPostcode = htmlspecialchars($receivedData["plz"]);
+  $enteredCity = htmlspecialchars($receivedData["city"]);
 
   if($enteredPassword == $enteredPasswordRepeat){
 
     $connection = new mysqli($dbHost, $dbUsername, $dbPassword, $dbName);
 
-    $insert = "INSERT INTO users (username,firstname,lastname,email,password) VALUES (?, ?, ?, ?, ?)";
+    $insert = "INSERT INTO users (username,firstname,lastname,email,password,address,postcode,city) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
 
     $stmt = $connection->prepare($insert);
-    $stmt->bind_param("sssss", $uname, $uFirstname, $uLastname, $useremail, $passwd);
+    $stmt->bind_param("ssssssis", $uname, $uFirstname, $uLastname, $useremail, $passwd, $address, $plz, $city);
 
     $uname = $enteredUsername;
     $uFirstname = $enteredFirstname;
     $uLastname = $enteredLastname;
     $useremail = $enteredEmail;
+    $address = $enteredAddress;
+    $plz = $enteredPostcode;
+    $city = $enteredCity;
     // Hash the password before storing it in the database
     $hashedPw = password_hash($enteredPassword, PASSWORD_DEFAULT);
     $passwd = $hashedPw;
@@ -44,7 +50,7 @@
       $stmt->bind_param("s", $uname);
       $uname = $enteredUsername;
       $stmt->execute();
-      $stmt->bind_result($id, $username, $firstname, $lastname, $email, $password);
+      $stmt->bind_result($id, $username, $firstname, $lastname, $email, $password, $address, $postcode, $city);
       $stmt->fetch();
 
       $_SESSION['user'] = array('id' => $id, 'username'=>$username,'firstname'=>$firstname, 'lastname'=>$lastname);

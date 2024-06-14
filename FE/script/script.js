@@ -14,6 +14,13 @@ function toggleLoginSignup() {
     $("#floatingPasswordRepeatLabel").hide();
     $("#floatingEmail").hide();
     $("#floatingEmailLabel").hide();
+
+    $("#floatingAddress").hide();
+    $("#floatingAddressLabel").hide();
+    $("#floatingPLZ").hide();
+    $("#floatingPLZLabel").hide();
+    $("#floatingCity").hide();
+    $("#floatingCityLabel").hide();
   } else {
 
     $("#floatingFirstname").show();
@@ -24,6 +31,13 @@ function toggleLoginSignup() {
     $("#floatingPasswordRepeatLabel").show();
     $("#floatingEmail").show();
     $("#floatingEmailLabel").show();
+
+    $("#floatingAddress").show();
+    $("#floatingAddressLabel").show();
+    $("#floatingPLZ").show();
+    $("#floatingPLZLabel").show();
+    $("#floatingCity").show();
+    $("#floatingCityLabel").show();
   }
 }
 
@@ -34,13 +48,16 @@ loginSwitch.addEventListener('change', function () {
 });
 
 class SignUpUser {
-  constructor(uname, fname, lname, email, password, passrepeat) {
+  constructor(uname, fname, lname, email, password, passrepeat, address, plz, city) {
     this.username = uname;
     this.firstName = fname;
     this.lastName = lname;
     this.email = email;
     this.password = password;
     this.passwordRepeated = passrepeat;
+    this.address = address;
+    this.plz = plz;
+    this.city = city;
   }
 }
 
@@ -93,7 +110,10 @@ function loginSignUpUser() {
         document.getElementById("floatingLastname").value,
         document.getElementById("floatingEmail").value,
         document.getElementById("floatingPassword").value,
-        document.getElementById("floatingPasswordRepeat").value
+        document.getElementById("floatingPasswordRepeat").value,
+        document.getElementById("floatingAddress").value,
+        document.getElementById("floatingPLZ").value,
+        document.getElementById("floatingCity").value
       );
 
       $.ajax({

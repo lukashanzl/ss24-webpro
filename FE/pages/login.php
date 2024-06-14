@@ -42,6 +42,19 @@ include_once("../../BE/classes/user.php");
       <input type="email" class="form-control" id="floatingEmail" name="floatingEmail" placeholder="Sample@email.com">
       <label for="floatingLastname" id="floatingEmailLabel">E-Mail</label>
     </div>
+    <div class="form-floating mb-3">
+      <input type="text" class="form-control" id="floatingAddress" name="floatingAddress" placeholder="SampleAddress">
+      <label for="floatingLastname" id="floatingAddressLabel">Adress</label>
+    </div>
+    <div class="form-floating mb-3">
+      <input type="number" class="form-control" id="floatingPLZ" name="floatingPLZ" placeholder="SamplePLZ">
+      <label for="floatingLastname" id="floatingPLZLabel">PLZ</label>
+    </div>
+    <div class="form-floating mb-3">
+      <input type="text" class="form-control" id="floatingCity" name="floatingCity" placeholder="SampleCity">
+      <label for="floatingLastname" id="floatingCityLabel">City</label>
+    </div>
+
     <button type="submit" onclick="loginSignUpUser()">Login</button>
   </div>
   <div class="form" id="logout-form">
