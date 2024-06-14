@@ -126,5 +126,3 @@ function loginSignUpUser() {
   }
 }
 
-window.onload
-

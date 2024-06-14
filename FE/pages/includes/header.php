@@ -1,3 +1,9 @@
+<?php
+session_start();
+
+include_once("../../BE/classes/user.php");
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,11 +23,6 @@
 </head>
 
 <body>
-
-<script>
-    var jsSession = '<?php echo $js_session; ?>';
-    console.log(jsSession);
-</script>
 
   <nav class="navbar navbar-light navbar-expand-lg bg-faded justify-content-center transparent" id="navbar">
     <div class="container">
@@ -66,6 +67,17 @@
           <li class="nav-item">
             <a class="nav-link" href="./login.php" data-bs-toggle="tooltip" data-bs-placement="top" title="Login/Sign Up"><i class="bi bi-person-square"></i></a>
           </li>
+            <?php 
+              if(isset($_SESSION['user'])){
+                echo '<li class="nav-item" id="greeting">';
+                echo 'Hello '. $_SESSION['user']['username'].'!';
+                echo '</li>';
+              }elseif(isset($_SESSION['admin'])){
+                echo '<li class="nav-item">';
+                echo 'Hello '. $_SESSION['admin']['username'].'!';
+                echo '</li>';
+              }
+            ?>
         </ul>
       </div>
     </div>

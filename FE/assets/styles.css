@@ -8,6 +8,11 @@ nav{
   font-size: large;
 }
 
+#greeting {
+  display: flex;
+  align-items: center;
+}
+
 /***** styling for login form *****/
 
 .form-container {

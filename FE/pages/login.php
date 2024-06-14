@@ -1,28 +1,12 @@
 <?php
-session_start();
 include_once("./includes/header.php");
 include_once("../../BE/classes/user.php");
 
-if(isset($_SESSION['user'])){
-  $js_session = $_SESSION['user'];
-} else {
-  $js_session = null;
-}
-if(isset($_SESSION['admin'])){
-  $js_session_admin = $_SESSION['admin'];
-} else {
-  $js_session_admin = null;
-}
-
 ?>
-<script>
-    var jsSession = '<?php echo $js_session; ?>';
-    console.log(jsSession);
-</script>
 
 <div class="form-container" id="form-container">
 
-  <div class="form">
+  <div class="form" id="login-form">
 
     <div class="d-flex my-switch">
       <div class="form-text text-1">Sign Up</div>
@@ -60,13 +44,34 @@ if(isset($_SESSION['admin'])){
     </div>
     <button type="submit" onclick="loginSignUpUser()">Login</button>
   </div>
+  <div class="form" id="logout-form">
+    <button type="submit" onclick="logoutUser()">Logout</button>
 </div>
+</div>
+
 <script>
   $(document).ready(function(){
     let param = window.location.search.substr(1);
     console.log(param);
   });
+
+  $("#logout-form").hide();
+  function logoutUser(){
+    window.location.replace("http://localhost/ss24-webpro/FE/pages/logout.php");
+  }
 </script>
+
 <?php
 include_once("./includes/footer.php");
+
+if(isset($_SESSION['user']) || isset($_SESSION['admin'])){
+  echo <<< EOT
+      <script>
+        $("#login-form").hide();
+        $("#logout-form").show();
+      </script>
+  EOT;
+}
+
+
 ?>
