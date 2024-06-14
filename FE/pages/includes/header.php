@@ -1,19 +1,3 @@
-<?php 
-session_start();
-
-if(isset($_SESSION['user'])){
-  $js_session = $_SESSION['user'];
-} else {
-  $js_session = null;
-}
-if(isset($_SESSION['admin'])){
-  $js_session_admin = $_SESSION['admin'];
-} else {
-  $js_session_admin = null;
-}
-
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 

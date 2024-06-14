@@ -133,7 +133,7 @@ nav{
 #products .card {
   transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 }
-.form-container { display: none; }
+/*.form-container { display: none; } */
 
 #loginRegisterBtns{
   padding:10px;
