@@ -1,6 +1,6 @@
 <?php
 include_once 'dbaccess.php';
-include_once '../classes/product.class.php';
+//include_once("../classes/product.class.php");
 
 class DataHandler {
     private $conn;
@@ -23,6 +23,13 @@ class DataHandler {
             $product->$key = $value;
         }
         return $product->create();
+    }
+
+    public function getAllCustomers() {
+        $select = "SELECT id, firstname, lastname, email FROM users";
+        $stmt = $this->conn->prepare($select);
+        $stmt->execute();
+        return $stmt;
     }
 }
 ?>
