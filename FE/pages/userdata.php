@@ -1,6 +1,6 @@
 <?php
-  include_once("../includes/header.php");
-  include_once("../../../BE/classes/user.php");
+  include_once("./includes/header.php");
+  include_once("../../BE/classes/user.php");
 ?>
 
 <div class="user-data-container">
@@ -28,11 +28,6 @@
           Email: <input type="email" id="email" name="email" value="<?php echo htmlspecialchars($user->getEmail()); ?>">
         </li>
       </ul>
-    </div>
-    <div class="section">
-      <h4>Address Information</h4>
-      <hr>
-      <!-- Add fields for address information here if needed -->
     </div>
     <div>
       <button type="submit">Save Changes</button>

@@ -54,7 +54,7 @@ session_start();
                   EOT;
               }
             ?>
-            <li><a class="dropdown-item" href="./user/userdata.php">Personal Data</a></li>
+            <li><a class="dropdown-item" href="./userdata.php">Personal Data</a></li>
             <li><a class="dropdown-item" href="./user/paymentmethods.php">Payment Methods</a></li>
             <li><hr class="dropdown-divider"></li>
             <li><a class="dropdown-item" href="./user/orders.php">Orders</a></li>
