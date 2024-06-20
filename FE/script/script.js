@@ -146,3 +146,62 @@ function loginSignUpUser() {
   }
 }
 
+
+
+
+function deactivateCustomer(customerId) {
+  if (confirm('Möchten Sie diesen Kunden wirklich deaktivieren?')) {
+      $.ajax({
+          type: "POST",
+          url: "../BE/database/dataHandler.php",
+          data: { action: 'deactivateCustomer', customerId: customerId },
+          success: function(response) {
+              alert('Kunde wurde deaktiviert.');
+              location.reload();
+          },
+          error: function() {
+              alert('Fehler beim Deaktivieren des Kunden.');
+          }
+      });
+  }
+}
+
+
+
+function viewOrders(customerId) {
+  $.ajax({
+      type: "POST",
+      url: "../pages/user/orders.php",
+      data: { action: 'getOrders', customerId: customerId },
+      success: function(response) {
+          const orders = JSON.parse(response);
+          const orderDetails = document.getElementById('order-details');
+          const orderTitle = document.getElementById('order-title');
+          orderDetails.style.display = 'table';
+          orderTitle.style.display = 'block';
+
+          orderDetails.innerHTML = `
+              <tr>
+                  <th>Produkt ID</th>
+                  <th>Produktname</th>
+                  <th>Menge</th>
+                  <th>Aktionen</th>
+              </tr>
+          `;
+
+          orders.forEach(order => {
+              orderDetails.innerHTML += `
+                  <tr>
+                      <td>${order.productId}</td>
+                      <td>${order.productName}</td>
+                      <td>${order.quantity}</td>
+                      <td><button onclick="removeProduct(${order.orderId}, ${order.productId})">Entfernen</button></td>
+                  </tr>
+              `;
+          });
+      },
+      error: function() {
+          alert('Fehler beim Abrufen der Bestellungen.');
+      }
+  });
+}

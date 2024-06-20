@@ -22,6 +22,7 @@
   $enteredAddress = htmlspecialchars($receivedData["address"]);
   $enteredPostcode = htmlspecialchars($receivedData["plz"]);
   $enteredCity = htmlspecialchars($receivedData["city"]);
+  $enteredActive = htmlspecialchars($receivedData["active"]);
 
   if($enteredPassword == $enteredPasswordRepeat){
 
@@ -30,7 +31,7 @@
     $insert = "INSERT INTO users (username,firstname,lastname,email,password,address,postcode,city) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
 
     $stmt = $connection->prepare($insert);
-    $stmt->bind_param("ssssssis", $uname, $uFirstname, $uLastname, $useremail, $passwd, $address, $plz, $city);
+    $stmt->bind_param("ssssssis", $uname, $uFirstname, $uLastname, $useremail, $passwd, $address, $plz, $city, $active);
 
     $uname = $enteredUsername;
     $uFirstname = $enteredFirstname;
@@ -39,6 +40,7 @@
     $address = $enteredAddress;
     $plz = $enteredPostcode;
     $city = $enteredCity;
+    $active = $enteredActive;
     // Hash the password before storing it in the database
     $hashedPw = password_hash($enteredPassword, PASSWORD_DEFAULT);
     $passwd = $hashedPw;
@@ -50,7 +52,7 @@
       $stmt->bind_param("s", $uname);
       $uname = $enteredUsername;
       $stmt->execute();
-      $stmt->bind_result($id, $username, $firstname, $lastname, $email, $password, $address, $postcode, $city);
+      $stmt->bind_result($id, $username, $firstname, $lastname, $email, $password, $address, $postcode, $city, $active);
       $stmt->fetch();
 
       $_SESSION['user'] = array('id' => $id, 'username'=>$username,'firstname'=>$firstname, 'lastname'=>$lastname);

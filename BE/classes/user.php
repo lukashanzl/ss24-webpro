@@ -22,6 +22,38 @@
     public function setPassword($pwd){ 
       $this->password=password_hash($pwd, PASSWORD_DEFAULT);
     }
+
+    public function getUsername(){
+      return $this->username;
+    }
+
+    public function setUsername($user){
+      $this->username = $user;
+    }
+
+    public function getEmail(){
+      return $this->email;
+    }
+
+    public function setEmail($mail){
+      $this->email = $mail;
+    }
+
+    public function getFirstname(){
+      return $this->firstname;
+    }
+    
+    public function setFirstname($first){
+      $this->firstname = $first;
+    }
+
+    public function getLastname(){
+      return $this->lastname;
+    }
+
+    public function setLastname($last){
+      $this->lastname = $last;
+    }
     
     static function createUser($user, $pass, $mail, $first, $last){
         if(strlen($user)>2 && strlen($pass)>12 && filter_var($mail, FILTER_VALIDATE_EMAIL)){
