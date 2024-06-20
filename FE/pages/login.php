@@ -3,7 +3,6 @@ include_once("./includes/header.php");
 include_once("../../BE/classes/user.php");
 
 ?>
-<p>test</p>
 <div class="form-container" id="form-container">
 
   <div class="form" id="login-form">
