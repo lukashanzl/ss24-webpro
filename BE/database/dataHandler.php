@@ -31,5 +31,20 @@ class DataHandler {
         $stmt->execute();
         return $stmt;
     }
+
+    public function deactivateCustomer($customerId) {
+        $query = "UPDATE users SET active = 0 WHERE id = ?";
+        $stmt = $this->conn->prepare($query);
+        $stmt->bindParam(1, $customerId, PDO::PARAM_INT);
+        return $stmt->execute();
+    }
+    
+    public function removeProductFromOrder($orderId, $productId) {
+        $query = "DELETE FROM order_items WHERE order_id = ? AND product_id = ?";
+        $stmt = $this->conn->prepare($query);
+        $stmt->bindParam('ii', $orderId, $productId, PDO::PARAM_INT);
+        return $stmt->execute();
+    }
+    
 }
 ?>

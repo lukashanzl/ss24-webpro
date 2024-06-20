@@ -8,7 +8,6 @@ require_once '../../BE/database/dataHandler.php';
 //require_once './user/orders.php';
 //require_once './user/userdata.php';
 
-// Admin-Überprüfung (hier Beispiel-Implementierung, anpassen je nach Login-System)
 
 if (!isset($_SESSION['admin'])) {
     echo <<< EOT
@@ -24,6 +23,21 @@ if (!isset($_SESSION['admin'])) {
 //$customers = $dataHandler->getAllCustomers();
 
 $dataHandler = new DataHandler();
+
+
+if (isset($_POST['action']) && $_POST['action'] == 'deactivateCustomer' && isset($_POST['customerId'])) {
+    $customerId = intval($_POST['customerId']);
+    $result = $dataHandler->deactivateCustomer($customerId);
+    if ($result) {
+        echo json_encode(['status' => 'success']);
+    } else {
+        echo json_encode(['status' => 'error']);
+    }
+    exit();
+}
+
+
+
 $stmt = $dataHandler->getAllCustomers();
 $customers = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
@@ -52,19 +66,20 @@ $customers = $stmt->fetchAll(PDO::FETCH_ASSOC);
             </tr>
             <?php endforeach; ?>
         </table>
+                
+        <div id="cart">
+            <h2>Warenkorb</h2>
+            <div id="cartContent">
+                <p>Warenkorb leer</p>
+            </div>
+            <p>Gesamtpreis: <span id="totalPrice">0.00€</span></p>
+            <div class="btn btn-danger" id="orderButton">Bestellen</div>
+            <div class="btn btn-info" id="scrollToTop">Back to top</div>
+        </div>
 
-        <h2 id="order-title" style="display: none;">Bestelldetails</h2>
-        <table id="order-details" class="table" style="display: none;">
-            <tr>
-                <th>Produkt ID</th>
-                <th>Produktname</th>
-                <th>Menge</th>
-                <th>Aktionen</th>
-            </tr>
-            <!-- Bestelldetails werden hier dynamisch eingefügt -->
-        </table>
     </div>
     <script src="script.js"></script>
+    <script src="script_products.js"></script>
 </body>
 
 <?php

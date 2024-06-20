@@ -24,7 +24,7 @@
   $stmt->bind_param("s", $uname);
   $uname = $enteredUsername;
   $stmt->execute();
-  $stmt->bind_result($id, $username, $firstname, $lastname, $email, $password, $address, $plz, $city);
+  $stmt->bind_result($id, $username, $firstname, $lastname, $email, $password, $address, $plz, $city, $active);
   $stmt->fetch();
 
   if(password_verify($enteredPassword, $password)){

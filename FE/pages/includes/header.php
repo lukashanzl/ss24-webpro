@@ -45,6 +45,15 @@ session_start();
             Account Management
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <?php
+              if (isset($_SESSION['admin'])) {
+                  echo <<< EOT
+                    <li><a class="dropdown-item" href="./admin.php">Admin Panel</a></php>
+                    <li><a class="dropdown-item" href="./edit_products.php">Produkte bearbeiten</a></php>
+                    <li><hr class="dropdown-divider"></li>
+                  EOT;
+              }
+            ?>
             <li><a class="dropdown-item" href="./user/userdata.php">Personal Data</a></li>
             <li><a class="dropdown-item" href="./user/paymentmethods.php">Payment Methods</a></li>
             <li><hr class="dropdown-divider"></li>
